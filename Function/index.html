@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+  
+    //Declaration
+    function sayHelloWorld() {
+      const whatToSay = 'Hello, World!';
+      console.log(whatToSay);
+    }
+
+
+    //Invocation
+    sayHelloWorld()
+    
+
+    //Parameters
+    function paintStars(num) {
+      console.log("*".repeat(num))
+    }
+
+    paintStars(5)
+
+    // function sayHello(name) {
+    //   console.log(`Hello ${name}`)
+    // }
+
+    // sayHello("Ninossss")
+
+
+
+    //Callbacks
+
+    function eatDinner(){
+      console.log("Eating the dinner ");
+    }
+
+    // eatDinner(); // <== Eating the dinner 
+    // eatDessert(); // <== Eating the dessert 
+    
+    function eatDinner(callback){
+      console.log("Eating the steak ");
+      callback();
+    }
+    
+    function eatDessert(){
+      console.log("Eating the dessert ");
+    }
+
+    function drinkCoffee() {
+      console.log("Drinking Coffee")
+    }
+    
+    eatDinner(drinkCoffee); // <== notice that there's NO () when passing a function as argument here
+    
+// Eating the steak 
+// Drinking Coffee
+
+
+//Returns
+
+ //Normal return
+        function greetText(name, surname) {
+            return '¡Buenos días, ' + name + ' ' + surname + '!'
+        }
+        const greet1 = greetText('María', 'Álvarez')
+        const greet2 = greetText('Esteban', 'Gómez')
+        console.log(greet1, greet2)
+ 
+ //Más de un return
+        function calculateTotalPrice(price, taxPercent){
+          if(typeof price !== 'number' || typeof taxPercent !== 'number'){ //Comprueba que el tipo de price y taxpercent sea number
+          return `You have to pass number values!`;
+        }
+
+        const theTaxPart = price * taxPercent / 100
+          return `${price + theTaxPart} €`;
+        }
+
+        let finalPrice = calculateTotalPrice(5, 7); // <== 5.35 €
+        console.log(finalPrice)
+
+
+        
+        //Return true or undefined (falsy)
+        function isEven(val) {
+            if (val % 2 === 0) {
+                return true;     // no es necesario ... else { return false }, las funciones carentes de retorno retornan undefined
+            }
+        }
+        const result1 = isEven(20);
+        const result2 = isEven(35);
+        
+        function printResult(result1, result2) {
+
+          if (result1) { console.log('20 es par') }
+            else { console.log('20 es impar') }
+          
+          if (result2) { console.log('35 es par') }
+            else { console.log('35 es impar') }
+        }
+
+        printResult(result1, result2)
+ 
+ 
+        //Return aborting function
+        function searchWord(val) {
+            for (let i = 0; i < 1000; i++) {
+                console.log('Iteración número ' + i);
+                if (i === 48) {
+                    return      // el retorno de una función supone detener su ejecución
+                }
+            }
+        }
+        searchWord('Qwerty');
+
+
+        // //Conversion to arrow functions
+
+        // Anonymous function
+        // arr.forEach(function(name, lastName)  { console.log(name) })
+
+        // //Declaramos con un =>
+
+        // arr.forEach( (name, lastName) => { console.log(name) })
+
+        // //Solo tenemos una instrucción, no hacen falta los {}
+
+        // arr.forEach( (name, lastName) =>  console.log(name) )
+
+        // //Si solo tuvieramos un parametro, no hacen falta los ()
+
+        // arr.forEach( name =>  console.log(name) )
+
+
+        // arr.forEach( (name, lastName) => {
+
+        //   console.log(name) 
+        
+        // })
+        
+        
+        //Scopes
+        //Scope Local
+        
+        
+        function sayHello() {
+          let firstName = "Ana"; // <== local variable
+          console.log(`Hello ${firstName}!`); 
+        }
+
+        sayHello(); // <== Hello Ana!
+        // console.log(firstName); // <== ReferenceError: firstName is not defined
+
+
+        //Global scope
+        
+        // const firstName = "Ana"; // <== global variable
+        
+        // function sayHello() {
+        //   console.log(`Hello ${firstName}!`); 
+        // }
+
+        // sayHello(); // <== Hello Ana!
+        // console.log(firstName); // <== Ana
+
+        
+        // Changing a global variable
+        // let firstName = "Ana"; // <== global variable
+
+        // function sayHello() {
+        //   firstName = "Martina";
+        //   console.log(`Hello ${firstName}!`); 
+        // }
+
+        // console.log(`Before the function executes the first name is ${firstName}.`); 
+        // // <== Before the function executes the first name is Ana.
+        // sayHello(); // <== Hello Martina!
+        // console.log(`After the function executes the first name is ${firstName}.`); 
+        // // <== After the function executes the first name is Martina.
+
+        //Shadowing ("redeclaring" a global variable)
+
+        // let firstName = "Ana"; // <== global variable
+
+        // function sayHello() {
+        //   let firstName = "Martina"; // <== local variable with the same name as the global one
+        //   console.log(`Hello ${firstName}!`); 
+        // }
+
+        // console.log(`Before the function executes the first name is ${firstName}.`); 
+        // // <== Before the function executes the first name is Ana.
+        // sayHello(); // <== Hello Martina!
+        // console.log(`After the function executes the first name is ${firstName}.`); 
+        // // <== After the function executes the first name is Ana.
+        
+
+        
+        //Hoisting
+
+        // greeting("Ana"); // Hello Ana
+
+        // function greeting(name) {
+        //   console.log(`Hello, ${name}`);
+        // }
+
+        //Excepción por scope local
+        
+        // let name = prompt("What is your name?");
+        
+        // greeting(name); // <== ReferenceError: greeting is not defined
+        // if (name){
+        //   function greeting(name) {
+        //     console.log(`Hello, ${name}`);
+        //   }
+        //   greeting(name); // <== Hello nameYouEntered
+        // }
+        
+  </script>
+</body>
+</html>

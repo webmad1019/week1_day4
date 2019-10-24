@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    const arrayNames = ["Pedro", "Jake", "Joan", "Mike"];
+
+    console.log(arrayNames[8])
+    console.log(arrayNames.length)
+    //Ultimo elemento
+    let lastElement =  arrayNames.length -1  
+    console.log(arrayNames[lastElement])
+    
+
+    //Añadir elementos
+
+    arrayNames[4] = "Paco"
+    console.log(arrayNames)
+
+    //Push añade elementos al final
+    arrayNames.push("Jessica")
+    console.log(arrayNames)
+
+    //Unshift añade al inicio
+    arrayNames.unshift("Imanol")
+    console.log(arrayNames)
+
+    //Shift elimina un elemento del inicio
+    arrayNames.shift()
+    console.log(arrayNames)
+
+
+    //Pop elimina el ultimo elemento
+    arrayNames.pop()
+    console.log(arrayNames)
+
+    //Splice
+
+    //0 es el index, num elm a eliminar   
+    arrayNames.splice(3, 2);
+    console.log(arrayNames);
+
+    //Iterar sobre el array
+
+    // for(let i=0; i < arrayNames.length; i++) {
+    //   console.log(arrayNames[i]);
+    // }
+
+    //Alreves
+    // for(let i= arrayNames.length-1; i >= 0; i--) {
+    //   console.log(arrayNames[i])
+    // }
+
+
+    //Usar el forEach
+
+    //ES5
+    arrayNames.forEach(function(name) {
+      console.log(name)
+    })
+
+    //ES6
+    arrayNames.forEach( (name) => {console.log(name)} )
+
+    //Acceder al indice desde el foreach
+
+    arrayNames.forEach(function(name, index) {
+      console.log(name, index)
+    })
+
+
+    //Split 
+
+    let phrase = "This is long enough for a string to count it words";
+
+    let words = phrase.split(" ");
+
+    console.log(words);
+    console.log(words[0]);
+    console.log(words.length);
+
+
+    
+  </script>
+</body>
+</html>

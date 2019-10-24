@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Week1_Day4</title>
+</head>
+<body>
+  
+  <script>
+    
+    //Comentarios
+
+    //Esto es un comentario en linea! :)
+
+    /* Hala un...
+    bloque! */
+    console.log("Hola chicos!")  
+  
+    //Declaracion con var, let y const
+    var name = "María"
+    const age = 25
+    let hobby, x, y, z
+    let lastName = "López"
+
+
+    //Naming Conventions
+    let a; // the name is a, with var you are only introducing a variable.
+    let color;
+    let _private;
+    let $button;
+    let getTop10;
+    let a_large_name;
+    let thisWayIsCalledCamelCase;
+    let π;
+
+    
+    hobby = "Programming!"
+    console.log(hobby)
+    hobby = ""
+    
+    //Use of typeof
+    const year = 2012
+
+    console.log(typeof undefined)
+    console.log(typeof year)
+  
+
+    //Integers && Floats
+    let integers = 5
+    const floats = 4.5
+
+    //Concatenate
+    let result = integers + "Batman"
+    //NaN Not A Number
+    result = integers * "Batman"
+    console.log(result)
+
+    //Module Operator
+    console.log(4%2, "resultado de resto")
+
+    //Shorthand operators
+    integers = integers + 5
+    integers += 5
+
+    
+    //Strings
+    name = "Teo"
+    let str1 = "Hola soy la 1"
+    let str2 = 'Hola soy el 2'
+    let sentence = "Hola soy" + " " + name
+    
+    //Interpolation with Backticks
+    
+    let str3 = `Hola soy ${name}`
+
+    console.log(str3)
+
+    //Scaping Characters
+    let str4 = "Me dijo: 'Marchate'"
+    let str5 = 'I\'m okay. \n Me too'
+
+    console.log(str5)
+
+
+    //Length
+
+    console.log(name.length)
+
+
+
+    //let name = name + " López"
+    name += " López"
+
+    //indexOf
+    console.log(name.indexOf("e"), "la primera")
+    console.log(name.indexOf("e", 3), "primera e a partir de indice 3")
+    console.log(name.lastIndexOf("e"), "la última")
+
+    //Repeat
+    console.log("s".repeat(10))
+
+    
+    //Substring
+    const message = "Don't be sad, be happy!";
+    let withSubstring = message.substring(0,3);
+    console.log(withSubstring); // <== Don
+    console.log(name.substring(0, 3))
+    
+    //Slice
+
+    let withSlice = name.slice(4);
+    console.log(withSlice); // <== Don
+
+    let negativeSlice = name.slice(-1)
+    
+    
+    
+    //localeCompare o comparar alfabeticamente
+    
+        let name2 = "María"
+    
+        const comparison = name.localeCompare(name2);
+    
+        console.log(comparison)
+
+        console.log('barcelona'.localeCompare('miami') ); // -1
+
+        console.log('miami'.localeCompare('barcelona') ); // 1
+
+        console.log('Miami'.localeCompare('miami') ); // 1
+
+    
+        //Booleans
+        console.log(true, false)
+
+        let isTurnedOn = true
+        let isStr = false
+
+          // Boolean logic operations: OR operator
+        // console.log(true  || true)       // true
+        // console.log(true  || false)      // true
+        // console.log(false || true)       // true
+        // console.log(false || false)      // false
+        // console.log(false || 4 > 2)      // true
+        // console.log(0 > 5 || 5 < 3)      // false
+ 
+        // // Boolean logic operations: AND operator
+        // console.log(true  && true)       // true
+        // console.log(true  && false)      // false
+        // console.log(false && true)       // false
+        // console.log(false && false)      // false
+        // console.log(false && 4 > 2)      // false
+        // console.log(7 > 5 && 5 < 6)      // true
+ 
+        // // Boolean logic operations: NOT operator
+        // console.log(!false)             // true
+        // console.log(!true)              // false
+        // console.log(!4 < 2)             // true
+        // console.log(!1)                 // false
+        // console.log(!0)                 // true
+
+
+      //Switch
+      name  = prompt ("Favorite Game of Thrones main character:");
+      let house = "";
+        
+      switch (name) {
+        case "Khal Drogo":
+          house = "Dothraki Horselord";
+          break;
+        case "Daenerys":
+          house = "Targaryen";
+          break;
+        case "Jon Snow":
+        case "Sansa":
+        case "Arya":
+          house = "Stark";
+          break;
+        default: 
+          house = "Other"
+          break
+      }
+      
+      console.log(`Your favorite character is from the house ${house}.`);
+  
+  
+  
+  //Loops, Break & Continue
+
+
+   for (let i = 0; i < 100; i++) {
+     if (i === 50) {
+       console.log("Instrucciones de la iteración " + i + " omitidas");
+       continue; // omits following instructions from the current loop
+     }
+     if (i === 80) {
+       console.log("Bucle abandonado prematuramente");
+       break; // leaves loop
+     }
+     console.log("Iteración número " + i);
+   }
+   console.log("Estructura abandonada");
+
+  </script>
+
+</body>
+</html>
